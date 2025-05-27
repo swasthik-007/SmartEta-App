@@ -54,6 +54,9 @@ def get_route_distance_km(start, end):
 
 model_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "model", "xgb_eta_model1.pkl")
 model = joblib.load(model_path)
+print(model)
+print(type(model.named_steps['regressor']))
+print(model.named_steps['regressor'].__module__)
 
 def predict_eta(data: dict) -> float:
     """

@@ -1,11 +1,11 @@
 # api/main.py
 from fastapi import FastAPI
 from pydantic import BaseModel
-from predictor import predict_eta
+from api.predictor import predict_eta
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from pydantic import BaseModel
-from predictor import get_route_distance_km
+from api.predictor import get_route_distance_km
 
 app = FastAPI()
 
