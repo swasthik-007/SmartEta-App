@@ -11,7 +11,9 @@ from xgboost import XGBRegressor
 import joblib
 
 # Load dataset
-df = pd.read_csv("../data/smarteta_dataset.csv")
+import os
+df = pd.read_csv(os.path.join(os.path.dirname(__file__), '..', 'data', 'smarteta_dataset.csv'))
+
 
 # Feature engineering
 df["order_hour"] = pd.to_datetime(df["order_time"]).dt.hour
@@ -52,5 +54,6 @@ print(f"RMSE: {rmse:.2f}")
 print(f"R² Score: {r2:.2f}")
 
 # Save model
-joblib.dump(pipeline, "model/xgb_eta_model.pkl")
-print("✅ Model saved to model/xgb_eta_model.pkl")
+joblib.dump(pipeline, os.path.join(os.path.dirname(__file__), 'xgb_eta_modelnew.pkl'))
+
+print("✅ Model saved to model/xgb_eta_modelnew.pkl")
