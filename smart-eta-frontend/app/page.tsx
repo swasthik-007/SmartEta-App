@@ -80,7 +80,10 @@ export default function Home() {
     };
 
     try {
-      const res = await axios.post("http://localhost:8000/predict", data);
+      const res = await axios.post(
+        "https://smarteta-app-e26i.onrender.com/predict",
+        data
+      );
       setResult(res.data.predicted_eta);
     } catch (err) {
       console.error("Prediction failed:", err);

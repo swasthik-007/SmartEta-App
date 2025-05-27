@@ -94,7 +94,7 @@ export default function LeafletMap({
       if (points.length !== 2) return;
       try {
         const [start, end] = points;
-        const res = await axios.post("http://localhost:8000/get-distance", {
+        const res = await axios.post("https://smarteta-app-e26i.onrender.com/get-distance", {
           start,
           end,
         });
