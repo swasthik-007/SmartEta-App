@@ -1,7 +1,7 @@
 # api/main.py
 from fastapi import FastAPI
 from pydantic import BaseModel
-from api.predictor import predict_eta
+from predictor import predict_eta
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 from pydantic import BaseModel
