@@ -1,0 +1,5 @@
+# Ignore Python venvs
+eta-env/
+__pycache__/
+*.pyc
+*.pkl
