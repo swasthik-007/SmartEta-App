@@ -48,8 +48,12 @@ def get_route_distance_km(start, end):
 
     return dist_km, route_coords
 # Load trained model
-model = joblib.load("model/xgb_eta_model1.pkl")
-print("✅ Model loaded:", type(model))
+# model = joblib.load("model/xgb_eta_model1.pkl")
+# print("✅ Model loaded:", type(model))
+
+
+model_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "model", "xgb_eta_model1.pkl")
+model = joblib.load(model_path)
 
 def predict_eta(data: dict) -> float:
     """
