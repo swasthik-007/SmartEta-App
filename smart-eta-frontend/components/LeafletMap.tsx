@@ -94,10 +94,13 @@ export default function LeafletMap({
       if (points.length !== 2) return;
       try {
         const [start, end] = points;
-        const res = await axios.post("https://smarteta-app-e26i.onrender.com/get-distance", {
-          start,
-          end,
-        });
+        const res = await axios.post(
+          "https://smarteta-app-e26i.onrender.com/get-distance",
+          {
+            start,
+            end,
+          }
+        );
         const dist = res.data.distance_km;
         const coordinates = res.data.route_coords;
 
@@ -158,7 +161,7 @@ export default function LeafletMap({
       </MapContainer>
 
       {distance && (
-        <p className="mt-2 font-medium">
+        <p className="mt-2 font-medium text-white ">
           📏 Route Distance: <b>{distance.toFixed(2)} km</b>
         </p>
       )}

@@ -28,18 +28,6 @@ export default function Home() {
   });
 
   // Theme setup
-  useEffect(() => {
-    const current = localStorage.getItem("theme") || "light";
-    document.documentElement.classList.toggle("dark", current === "dark");
-    setTheme(current);
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-    setTheme(newTheme);
-  };
 
   // Auto-reset resetMap to false
   useEffect(() => {
@@ -97,12 +85,6 @@ export default function Home() {
           <h1 className="text-3xl font-bold text-white text-center">
             🚚 Smart ETA
           </h1>
-          <button
-            onClick={toggleTheme}
-            className="ml-auto bg-gray-600 text-white px-3 py-1 rounded"
-          >
-            Toggle {theme === "dark" ? "Light" : "Dark"} Mode
-          </button>
         </div>
 
         <LeafletMap
@@ -113,7 +95,7 @@ export default function Home() {
 
         {coords && (
           <form className="space-y-4" onSubmit={handleSubmit}>
-            <p className="font-medium text-lg text-center">
+            <p className="font-medium text-lg text-center text-white">
               🏁 Distance: <b>{distanceKm?.toFixed(2)} km</b>
             </p>
 
